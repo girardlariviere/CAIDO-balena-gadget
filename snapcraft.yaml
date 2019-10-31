@@ -1,6 +1,6 @@
-name: pi
+name: caido-gateway-balena 
 version: 18-1
-summary: Raspberry Pi gadget
+summary: Raspberry Pi CM3 - Balena gadget for CAIDO
 description: |
  Support files for booting Raspberry Pi.
  This gadget snap supports the Pi2, Pi3 and the Compute
@@ -102,6 +102,13 @@ parts:
       - on amd64:
         - gcc-arm-linux-gnueabihf
         - libc6-dev-armhf-cross
+  snaps:
+    plugin: nil
+    after:
+      - devicetrees
+    stage-snaps:
+      - network-manager
+      - ufw
   psplash:
     source: git://git.yoctoproject.org/psplash
     plugin: nil
